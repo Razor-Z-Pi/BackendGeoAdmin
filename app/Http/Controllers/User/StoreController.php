@@ -5,6 +5,7 @@ namespace App\Http\Controllers\User;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\User\StoreRequest;
 use App\Models\User;
+use http\Env\Request;
 use Illuminate\Support\Facades\Hash;
 
 
@@ -21,5 +22,10 @@ class StoreController extends Controller
       $user = User::create($data);
       $token = auth() -> tokenById($user -> id);
       return response(["access_token" => $token]);
+    }
+
+
+    public function update(StoreRequest $request) {
+      return response(["asdasd"]);
     }
 }

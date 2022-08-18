@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\User\DeleteController;
+use App\Http\Controllers\User\UpdateController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -39,4 +41,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::group(["namespace" => "User", "prefix" => "users"], function() {
   Route::post("/","StoreController");
+  Route::delete("/{id}", [DeleteController::class, "destroy"]) -> name("users.destroy");
+  Route::put("/", [UpdateController::class, "update"]) -> name("users.update");
 });
