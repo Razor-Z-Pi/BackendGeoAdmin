@@ -23,9 +23,4 @@ class StoreController extends Controller
       $token = auth() -> tokenById($user -> id);
       return response(["access_token" => $token]);
     }
-
-
-    public function update(StoreRequest $request) {
-      return response(["asdasd"]);
-    }
 }

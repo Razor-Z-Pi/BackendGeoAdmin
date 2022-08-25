@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\User\CreateController;
 use App\Http\Controllers\User\DeleteController;
 use App\Http\Controllers\User\UpdateController;
 use Illuminate\Http\Request;
@@ -41,6 +42,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::group(["namespace" => "User", "prefix" => "users"], function() {
   Route::post("/","StoreController");
+  Route::post("/create", [CreateController::class, "create"]) -> name("users.create");
   Route::delete("/{id}", [DeleteController::class, "destroy"]) -> name("users.destroy");
   Route::put("/", [UpdateController::class, "update"]) -> name("users.update");
 });
