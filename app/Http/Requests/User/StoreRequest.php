@@ -27,7 +27,8 @@ class StoreRequest extends FormRequest
             "name" => "required|string",
             "email" => "required|email",
             "password" => "required|string|required_with:passwordRemove|same:passwordRemove",
-            "passwordRemove" => "required|string"
+            "passwordRemove" => "required|string",
+            "id_role" => "required|integer"
         ];
     }
 }

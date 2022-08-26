@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Resources\UserOptional;
+namespace App\Http\Resources\RoleResource;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class OptionalResource extends JsonResource
+class RoleOptionalResources extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -16,9 +16,7 @@ class OptionalResource extends JsonResource
     {
         return [
           "id" => $this -> id,
-          "name" => $this -> name,
-          "email" => $this -> email,
-          "id_role" => $this -> id_role
+          "name" => $this -> name
         ];
     }
 }

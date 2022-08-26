@@ -46,3 +46,8 @@ Route::group(["namespace" => "User", "prefix" => "users"], function() {
   Route::delete("/{id}", [DeleteController::class, "destroy"]) -> name("users.destroy");
   Route::put("/", [UpdateController::class, "update"]) -> name("users.update");
 });
+
+Route::group(["namespace" => "Role", "prefix" => "roles"], function() {
+  Route::get("/", "RoleController");
+});
+
