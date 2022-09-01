@@ -47,7 +47,10 @@ Route::group(["namespace" => "User", "prefix" => "users"], function() {
   Route::put("/", [UpdateController::class, "update"]) -> name("users.update");
 });
 
+
+
 Route::group(["namespace" => "Role", "prefix" => "roles"], function() {
   Route::get("/", "RoleController");
+  Route::get("/user","OptionalController");
 });
 

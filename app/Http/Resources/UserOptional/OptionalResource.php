@@ -18,7 +18,8 @@ class OptionalResource extends JsonResource
           "id" => $this -> id,
           "name" => $this -> name,
           "email" => $this -> email,
-          "id_role" => $this -> id_role
+          "id_role" => $this -> id_role,
+          "created_at" => $this -> created_at
         ];
     }
 }
